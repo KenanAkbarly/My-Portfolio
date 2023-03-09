@@ -1,0 +1,14 @@
+:export { logoPrimary: var(--logo-primary); }
+.logo{
+   width: 140px;
+   height: 50px;
+   display: flex;
+   align-items: center;
+//    justify-content: space-between;
+   span{
+    font-weight: 900;
+    font-style: italic;
+    font-size: 24px;
+    color: #db1d5e;
+   }
+}

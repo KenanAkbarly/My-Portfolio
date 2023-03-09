@@ -1,0 +1,65 @@
+import s from './Resume.module.scss';
+import { ReactComponent as FilesIcon } from '../../assets/resume-files.svg';
+import { ReactComponent as DownloadIcon } from '../../assets/download.svg';
+import { useEffect, useRef, useState } from 'react';
+import BaseLayout from '../../layouts/BaseLayout/BaseLayout';
+import LinerProgress from '../../components/UIElements/LinerProgress/LinerProgress';
+import Button from '../../components/UIElements/Button/Button';
+//react-pdf
+import { Document, Page, pdfjs } from 'react-pdf';
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+//
+const resumeLink =
+  'https://drive.google.com/file/d/1IZ5N2qp75fVL4Rx2Cg2tXValLfbdhUpP/view?usp=share_link';
+
+const Resume = () => {
+  const pdfWrapper = useRef(null);
+  const [pdfPageWidth, setPdfPageWidth] = useState(null);
+  useEffect(() => {
+    setPdfPageWidth(
+      pdfWrapper.current?.getBoundingClientRect().width || null,
+    );
+  }, []);
+
+  const removeTextLayerOffset = () => {
+    const textLayers = document.querySelectorAll(
+      '.react-pdf__Page__textContent',
+    );
+    textLayers.forEach((layer) => {
+      const { style } = layer;
+      style.top = '0';
+      style.left = '0';
+      style.transform = '';
+    });
+  };
+
+  return (
+    <BaseLayout>
+      <div className={s.content}>
+        <div className={s.header}>
+          <h1 className={s.title}>
+            My <br /> Resume
+          </h1>
+
+          <div className={s.filesImg}>
+            <FilesIcon />
+          </div>
+        </div>
+
+        <Button
+          style={{ margin: 'auto', width: '15rem' }}
+          className="primary"
+          href={resumeLink}
+          target="_blank"
+        >
+          <DownloadIcon fill="#fff" />
+          <span className={s.downloadText}> get my resume</span>
+          <span className={s.filename}>.pdf</span>
+        </Button>
+      </div>
+    </BaseLayout>
+  );
+};
+
+export default Resume;

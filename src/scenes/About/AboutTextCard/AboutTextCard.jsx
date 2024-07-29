@@ -7,12 +7,16 @@ const AboutTextCard = () => {
       <p style={{ textAlign: 'justify' }}>
         Hi Everyone, I am{' '}
         <span className={s.purple}>Kenan Akbarly </span>
-        from <span className={s.purple}> Saatli, Azerbaijan.</span>
+        from <span className={s.purple}>Baku, Azerbaijan.</span>
         <br />
         Skilled MERN Stack Developer.
         <br /> Bachelor in Information Technology from
         <br />
         Azerbaijan Technical University, Baku.
+        <br />
+        <br /> Master in information systems in management from
+        <br />
+        Azerbaijan University of Architecture and Construction, Baku.
         <br />
         <br />
         Apart from coding, some other activities that I love to do!

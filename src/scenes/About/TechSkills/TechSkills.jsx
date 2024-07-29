@@ -21,13 +21,17 @@ import {
   IoLogoCss3
 } from 'react-icons/io';
 import {
-  FaBootstrap
+  FaBootstrap,
+  FaFileWord,
+  FaFilePowerpoint,
+  FaFileExcel
 } from 'react-icons/fa';
 import {
   SiTailwindcss,
   SiJquery,
   SiAdobephotoshop,
-  
+  SiPowerbi
+
 } from 'react-icons/si';
 import {
   FiFigma
@@ -83,6 +87,18 @@ const TechSkills = () => {
       </li>
       <li className={s.techIcon}>
         <SiAdobephotoshop />
+      </li>
+      <li className={s.techIcon}>
+      <FaFileWord />
+      </li>
+      <li className={s.techIcon}>
+      <FaFilePowerpoint />
+      </li>
+      <li className={s.techIcon}>
+      <FaFileExcel />
+      </li>
+      <li className={s.techIcon}>
+      <SiPowerbi />
       </li>
     </ul>
   );

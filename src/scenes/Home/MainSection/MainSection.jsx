@@ -19,6 +19,7 @@ const MainSection = () => {
         <div style={{ paddingTop: 50 }}>
           <Typewriter
             strings={[
+              'Front End Developer',
               'MERN Stack Developer',
               'Continuously Learning',
               'React Developer',
